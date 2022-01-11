@@ -1,6 +1,7 @@
 package exercice1;
 
 import datamocklib.Person;
+import datamocklib.TxtHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +11,6 @@ public class MainExercice1 {
     // Format du fichier : firstName,lastName,birthDate,gender,cityOfResidence,cityOfBirth
     // Pas de header
     public List<Person> parse(List<String> data) {
-        // A COMPLETER
         return new ArrayList<Person>();
     }
 
