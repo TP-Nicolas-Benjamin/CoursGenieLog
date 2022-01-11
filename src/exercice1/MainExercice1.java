@@ -11,6 +11,8 @@ public class MainExercice1 {
     // Format du fichier : firstName,lastName,birthDate,gender,cityOfResidence,cityOfBirth
     // Pas de header
     public List<Person> parse(List<String> data) {
+        assert data.size() == 6;
+
         return new ArrayList<Person>();
     }
 

@@ -3,6 +3,7 @@ package datamocklib;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class Person {
 
@@ -20,6 +21,27 @@ public class Person {
         this.gender = gender;
         this.cityOfResidence = cityOfResidence;
         this.cityOfBirth = cityOfBirth;
+    }
+
+    // firstName,lastName,birthDate,gender,cityOfResidence,cityOfBirth
+    private final int  FIRSTNAME_INDEX = 0;
+    private final int LASTNAME_INDEX = 1;
+    private final int BIRTHDATE_INDEX = 2;
+    private final int GENDER_INDEX = 3;
+    private final int CITY_RESIDENCE_INDEX = 4;
+    private final int CITY_BIRTH_INDEX = 5;
+
+
+    // line --> 
+    public Person(String line) {
+        // Split line by ,
+        String[] personInfo = line.split(",");
+        this.firstName = personInfo[FIRSTNAME_INDEX];
+        this.lastName = personInfo[LASTNAME_INDEX];
+        this.birthDate = personInfo[BIRTHDATE_INDEX];
+        this.gender = personInfo[GENDER_INDEX];
+        this.cityOfResidence = personInfo[CITY_RESIDENCE_INDEX];
+        this.cityOfBirth= personInfo[CITY_BIRTH_INDEX];
     }
 
     public void setFirstName(String firstName) {

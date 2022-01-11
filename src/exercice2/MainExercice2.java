@@ -1,5 +1,9 @@
 package exercice2;
 
+import java.util.List;
+
+import datamocklib.Person;
+import datamocklib.TxtHelper;
 import exercice2.models.*;
 
 public class MainExercice2 implements Exo2 {
@@ -14,7 +18,18 @@ public class MainExercice2 implements Exo2 {
      */
     @Override
     public void displayPersonFromChambery() {
-        System.out.println("todo");
+        List<String> data = TxtHelper.getDataFromTxt("server.txt");
+        try {
+            TxtHelper.clearDataLocal();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        for (String line : data) {
+            if (line.contains("Chambéry")) {
+                TxtHelper.insertDataInTxt(line, "local.txt");
+            }
+        }
+        System.out.println(TxtHelper.getDataFromTxt("local.txt"));
     }
 
     /*
@@ -24,7 +39,19 @@ public class MainExercice2 implements Exo2 {
      */
     @Override
     public void displayBoomers() {
-
+        List<String> data = TxtHelper.getDataFromTxt("server.txt");
+        try {
+            TxtHelper.clearDataLocal();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        for (String line : data) {
+            Person person = new Person(line);
+            if (person.getAge() > 25) {
+                TxtHelper.insertDataInTxt(line, "local.txt");
+            }
+        }
+        System.out.println(TxtHelper.getDataFromTxt("local.txt"));
     }
 
     /*
@@ -33,7 +60,19 @@ public class MainExercice2 implements Exo2 {
      */
     @Override
     public void displayFemales() {
-
+        List<String> data = TxtHelper.getDataFromTxt("server.txt");
+        try {
+            TxtHelper.clearDataLocal();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        for (String line : data) {
+            Person person = new Person(line);
+            if (person.getGender().equals("f")) {
+                TxtHelper.insertDataInTxt(line, "local.txt");
+            }
+        }
+        System.out.println(TxtHelper.getDataFromTxt("local.txt"));
     }
 
     /*
@@ -42,7 +81,19 @@ public class MainExercice2 implements Exo2 {
      */
     @Override
     public void displayFemaleBoomers() {
-
+        List<String> data = TxtHelper.getDataFromTxt("server.txt");
+        try {
+            TxtHelper.clearDataLocal();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        for (String line : data) {
+            Person person = new Person(line);
+            if (person.getGender().equals("f") && person.getAge() > 25) {
+                TxtHelper.insertDataInTxt(line, "local.txt");
+            }
+        }
+        System.out.println(TxtHelper.getDataFromTxt("local.txt"));
     }
 
     public static void main(String[] args) {
